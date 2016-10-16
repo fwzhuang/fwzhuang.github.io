@@ -23,12 +23,12 @@ description: You and I share the same sky!
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://pages.github.com/"
-  Author's home: "http://deanattali.com"
+  Home: "https://youizone.com"
+  Blog:
+    - Categories: "/"
+    - Archives: "/"
+    - Tags: "/"
+  AboutMe: "https://youizone.com"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -39,26 +39,26 @@ avatar: "/img/avatar-icon.png"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Some Person
-  email: "youremail@domain.com"
-  facebook: yourname  # eg. daattali
-  github: yourname    # eg. daattali
-  twitter: yourname   # eg. daattali
-  google-plus: +yourname   # eg. +DeanAttali or 109424658772469020925
-  linkedin: yourname  # eg. daattali
-  xing: yourname      # eg. daattali
+  name: fwzhuang
+  email: "fwzhuang@gmail.com"
+  facebook: fwzhuang  # eg. daattali
+  github: fwzhuang    # eg. daattali
+  twitter: fwzhuang   # eg. daattali
+  google-plus: +fwzhuang   # eg. +DeanAttali or 109424658772469020925
+  linkedin: fwzhuang  # eg. daattali
+  xing: fwzhuang      # eg. daattali
   stackoverflow: yourlink  # eg. "3943160/daattali"
-  snapchat: yourname  # eg. daattali
-  instagram: yourname # eg. daattali
-  youtube: yourlink   # eg. user/daattali or channel/daattali
-  spotify: yourname   # eg. daattali
+  snapchat: fwzhuang  # eg. daattali
+  instagram: fwzhuang # eg. daattali
+  youtube: fwzhuang   # eg. user/daattali or channel/daattali
+  spotify: fwzhuang   # eg. daattali
 
 # Select which links to show in the footer
 footer-links-active:
-  rss: false
-  facebook: true
+  rss: true
+  facebook: false
   email: true
-  twitter: true
+  twitter: false
   google-plus: false
   github: true
   linkedin: false
@@ -78,7 +78,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "https://youizone.com"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Misc --- #
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
