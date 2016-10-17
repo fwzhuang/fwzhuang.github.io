@@ -1,16 +1,19 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: YouIZone
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+YouIZone(You and I share the same sky!),  is created for share the posts with you and me. I just recorded something in my spare time. Maybe it is  useless for you, or just a little help for you. 
 
-- I rock a great mustache
-- I'm extremely loyal to my family
 
-What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+####  Me
+* Education
+	xxx
+	xxx
+* Work Experience
+	xxx
+	xxx
+* Hobby
+	xxx
+	xxx
