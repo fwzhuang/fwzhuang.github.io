@@ -9,6 +9,7 @@ tags: [random, exciting-stuff]
 
 ### 2. 添加静态网页文件
 测试样例，在终端上输入
+
 ```
 git clone https://github.com/username/username.github.io
 cd username.github.io
@@ -17,10 +18,12 @@ git add --all
 git commit -m "Initial commit"
 git push -u origin master
 ```
+
 然后github部署完成后，就可以访问https://usermane.github.io了。
 
 ### 3. 使用CNAME自定义域名
 添加CNAME文件，注意必须是大写， 然后填入你的域名，不需要填入http，只填写域名后面的部分 。
+
 ```
 touch CNAME
 echo youizone.com >> CNAME ##example
