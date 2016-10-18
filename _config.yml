@@ -134,6 +134,7 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - .gitignore
   - Vagrantfile
   - vender #exculde directory
   - vendor #exculde directory
