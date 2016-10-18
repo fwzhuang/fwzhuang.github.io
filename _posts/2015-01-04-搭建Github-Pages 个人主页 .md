@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 搭建个人github pages主页!
-tags: [random, exciting-stuff]
+categories: Web
+tags: [github pages, blog]
+comments: true
 ---
 
 ### 1. 创建个人仓库
@@ -34,5 +36,5 @@ git push origin master
 
 ### 4. 修改域名提供商的解析
 以阿里云为例，登录阿里云后，在控制台栏找到云解析DNS ，然后选择对应的域名，添加解析，示例如何
-![解析](../img/posts/domainDNS.png)
+![解析](/img/assets/domainDNS.png)
 其中 A类型中对应的ip是你ping username.github.io的ip, CNAME的记录值就是你的个人username.github.io
