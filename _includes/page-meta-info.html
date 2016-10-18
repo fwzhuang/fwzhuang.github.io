@@ -1,0 +1,32 @@
+<div class="post-meta"> 
+    <!-- post date -->
+    <span class="post-date">
+    	<i class="fa fa-calendar" aria-hidden="true" title="Date published"></i> {{ page.date | date_to_string }}
+    </span>
+    
+    <!-- post categories -->
+    <span class="post-cat">
+    	{% if page.categories %} |
+	    {% for cat in page.categories %}
+	        {% if forloop.first %}
+	            <i class="fa fa-folder" title="Post categories"></i>
+	        {% endif %}
+	            <a href="{{ site.category_page | prepend: site.baseurl }}#{{ cat | slugify }}" class="post-cat" title="Posts categorized {{ cat }}">{{ cat }}</a>
+    		{% unless forloop.last %} &bull; {% endunless %}
+    	    {% endfor %}
+    	{% endif %}
+    </span>
+    
+    <!-- post tags -->
+    <span class="post-tag">
+    	{% if page.tags %} |
+	    {% for tag in page.tags %}
+	        {% if forloop.first %}
+	            <i class="fa fa-tags" title="Post tags"></i>
+	        {% endif %}
+	            <a href="{{ site.tag_page | prepend: site.baseurl }}#{{ tag | slugify }}" class="post-tag" title="Posts tagged {{ tag }}">{{ tag }}</a>
+    		{% unless forloop.last %} &bull; {% endunless %}
+    	    {% endfor %}
+    	{% endif %}
+    </span>
+</div>
