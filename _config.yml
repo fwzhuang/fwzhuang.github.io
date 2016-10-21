@@ -46,7 +46,7 @@ author:
   facebook: fwzhuang  # eg. daattali
   github: fwzhuang    # eg. daattali
   twitter: fwzhuang   # eg. daattali
-  google-plus: +fwzhuang   # eg. +DeanAttali or 109424658772469020925
+  google-plus: 107846372768939832972   # eg. +DeanAttali or 109424658772469020925
   linkedin: fwzhuang  # eg. daattali
   xing: fwzhuang      # eg. daattali
   stackoverflow: yourlink  # eg. "3943160/daattali"
@@ -74,9 +74,9 @@ footer-links-active:
 # Select which share links to show in posts
 share-links-active:
   twitter: true
-  facebook: true
-  google: false
-  linkedin: true
+  facebook: false
+  google: true
+  linkedin: false
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
