@@ -87,7 +87,7 @@ url-pretty: "youizone.com"  # eg. "deanattali.com/beautiful-jekyll"
 disqus: "fwzhuang-github-io"
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
+google_analytics: "UA-86233547-1"
 
 # Facebook App ID
 # fb_app_id: ""
