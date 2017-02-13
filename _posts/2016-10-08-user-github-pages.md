@@ -5,8 +5,6 @@ categories: Web
 tags: [github-pages, web]
 comments: true
 ---
-
-## Github Pages
 GitHub Pages is designed to host your personal, organization, or project pages directly from a GitHub repository. To learn more about the different types of GitHub Pages sites, see "User, organization, and project pages."
 <!--more-->
 
