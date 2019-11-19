@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 搭建个人github pages主页!
 categories: Web
 tags: [github-pages, web]

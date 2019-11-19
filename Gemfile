@@ -1,6 +1,6 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'execjs'
-gem 'therubyracer'
-gem 'github-pages'
-gem 'jekyll-paginate'
+# gem "github-pages", group: :jekyll_plugins
+gemspec
+
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?

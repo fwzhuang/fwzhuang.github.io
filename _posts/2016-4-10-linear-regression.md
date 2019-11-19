@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 机器学习-回归!
 categories: ML
 tags: [algorithm, ml]
@@ -14,7 +13,7 @@ comments: true
 说到回归，一般是指线性回归，线性回归是指可以通过将输出项分别乘以一些系数，再将结果之和作为输出。这种具有线性相关关系的方程，就是我们所说的线性回归方程。
 
 #### 表现形式
-***
+
 * 单个输入
 
 	$$y=ax+b$$
@@ -23,7 +22,7 @@ comments: true
 
 $$h_\theta(x) =  \sum_{i=0}^n \theta_ix_i = \theta^T x $$
 
-***
+
 
 #### 损失函数
 

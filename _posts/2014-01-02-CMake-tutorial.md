@@ -1,5 +1,4 @@
 ---
-layout: post
 title: CMake  tutorials
 categories: C++
 tags: [c++, cmake]

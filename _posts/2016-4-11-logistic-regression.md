@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 机器学习-逻辑斯特回归!
 categories: ML
 tags: [algorithm, ml]

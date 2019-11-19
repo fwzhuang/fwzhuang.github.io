@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 机器学习十大常用算法
 categories: ML
 tags: [algorithm, ml]
