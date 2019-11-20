@@ -1,8 +1,6 @@
 ---
 title: 机器学习-逻辑斯特回归!
-categories: ML
-tags: [algorithm, ml]
-comments: true
+tags: [Algorithm, ML]
 ---
 
 逻辑斯特回归是一种广义的线性回归模型，它实际是一种分类方法，主要是用于两分类问题，输出两种分类的概率。

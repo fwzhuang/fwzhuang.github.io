@@ -1,8 +1,6 @@
 ---
 title: CMake  tutorials
-categories: C++
-tags: [c++, cmake]
-comments: true
+tags: [C++, CMAKE]
 ---
 CMake  入门教程 V1.0
 <!--more-->

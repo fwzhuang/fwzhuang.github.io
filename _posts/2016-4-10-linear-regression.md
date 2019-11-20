@@ -1,8 +1,6 @@
 ---
 title: 机器学习-回归!
-categories: ML
-tags: [algorithm, ml]
-comments: true
+tags: [Algorithm, ML]
 ---
 
 回归的目的是预测数值型的目标值，最直接的方式就是找到回归方程，那么就可以通过回归方程得到任意预测点的目标值。
