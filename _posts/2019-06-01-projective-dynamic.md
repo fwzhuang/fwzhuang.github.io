@@ -1,6 +1,6 @@
 ---
-title: Welcome
-tags: TeXt
+title: Projective Dynamics
+tags: Simulation
 ---
 
 <!--more-->
@@ -14,6 +14,7 @@ tags: TeXt
 $$ \int x{_{ij}}dx{_{ij}} = \frac {1} {2} x{^2_{ij}} $$
 
 那么有
+
 $$ \int XdX = \sum_i \sum_j \int x{_{ij}}dx{_{ij}} = \frac {1} {2} \sum_i \sum_j x{^2_{ij}} = \frac {1} {2} tr(X^TX) =  \frac {1} {2} || X||{^2_F} $$
 
 
@@ -28,8 +29,10 @@ v_{n+1} =v_{n}+hM^{-1}(f_{int}(q_{n+1})+f_{ext})  \cdots  (2)
 $$　M(q_{n+1}- q_n-hv_n)  = h^2(f_{int}(q_{n+1})+ f_{ext})  \cdots  (3) $$
 
 令
-$$ s_n =  q_n + hv_n + h^2 M^{-1}fext$$
+$$ s_n =  q_n + hv_n + h^2 M^{-1}fext$$  
+
 则有
+
 $$ \frac{1}{h^2}M(q_{n+1}- s_n)= f_{int}(q_{n+1}) $$
 
 上式可转化为下面式子的优化问题，
