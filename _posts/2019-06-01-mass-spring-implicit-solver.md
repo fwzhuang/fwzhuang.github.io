@@ -29,7 +29,7 @@ v_{n+1} =v_{n}+hM^{-1}(f_{int}(q_{n+1})+f_{ext})  \cdots  (2)
 $$　M(q_{n+1}- q_n-hv_n)  = h^2(f_{int}(q_{n+1})+ f_{ext})  \cdots  (3) $$
 
 令
-$ s_n =  q_n + hv_n + h^2 M^{-1}fext$  
+$ s_n =  q_n + hv_n + h^2 M^{-1}fext $  
 
 则有
 
