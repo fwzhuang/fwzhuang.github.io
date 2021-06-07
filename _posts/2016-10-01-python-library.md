@@ -1,8 +1,8 @@
 ---
 layout: post
 title: python常用的库
-categories: Data Analysis
-tags: [python, data_analysis]
+categories: Python
+tags: [Python]
 comments: true
 ---
 

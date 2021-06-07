@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Windows下支持多版本python
-categories: Data Analysis
-tags: [python, data_analysis]
+categories: Python
+tags: [Python]
 comments: true
 ---
 
