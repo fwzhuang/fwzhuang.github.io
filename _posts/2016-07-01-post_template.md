@@ -10,7 +10,6 @@ tags: TeXt
 更多详细内容
 
 ---
+If you like it, don't forget to give me a star.
 
-If you like it, don't forget to give me a star. :star2:
-
-[![Star This Project](https://img.shields.io/github/stars/kitian616/jekyll-TeXt-theme.svg?label=Stars&style=social)](https://github.com/fwzhuang/fwzhuang.github.io)
+[![Star This Project](/img/assets/github.svg)](https://github.com/fwzhuang/fwzhuang.github.io)

@@ -1,0 +1,273 @@
+---
+layout: post
+title: Windows下支持多版本python
+categories: Data Analysis
+tags: [python, data_analysis]
+comments: true
+---
+
+numpy 简明教程
+<!--more-->
+
+#### numpy 基本的功能
+• 快速高效的多维数组对象ndarray
+• 用于对数组执行元素级计算以及直接对数组执行数学运算的函数
+• 用于读写硬盘上基于数组的数据集的工具
+• 线性代数运算、傅里叶变换,以及随机数生成
+• 用于将C、C++、Fortran代码集成到Python的工具
+• 除了为Python提供快速的数组处理能力,NumPy在数据分析方面还有另外一个主要作用,即作为在算法之间传递数据的容器。
+
+#### 数据类型
+* int8, uint8 有/无符号的8位整型
+* int16, uint16 有/无符号的16位整型
+* int32, uint32 有/无符号的32位整型
+* int/ int64, uint64 有/无符号的64位整型, 默认类型
+* float16 半精度浮点数
+* float32 标准的单精度浮点数,与C的float兼容。
+* float/ float64 标准的双精度浮点数。与C的double和Python的float兼容，默认类型
+* float128 扩展精度浮点数
+* complex64/128/256 分别用两个32位,64位或128位浮点数表示的复数
+* bool 存储True和False值的布尔类型
+* object Python对象类型
+* string_ 固定长度的字符串类型。S10代表长度为10的字符串
+* unicode_ 固定长度的unicode类型
+
+```python
+a = np.zeros(10)
+a.astype(np.float) #常用astype进行类型转换
+a.dtype #查找array的类型 
+a = np.zeros(10, np.float) #或者初始时进行指定类型。
+
+```
+
+#### 导入numpy库
+
+```
+import numpy as np
+```
+
+#### 常用初始化函数
+
+```python
+a = np.zeros(10) #创建10个元素为0的array
+a = np.zeros((4,4), np.int32) #创建4×4，元素为0的矩阵， 数据类型为int32
+a = np.empty((m,n,k), np.float) #创建m×n×k的三维数组，所有元素未初始化
+b = np.zeros_like(a) #创建和a Array相同维度的元素为0的array
+a = np.random.sample(10) #产生在0-1之间的随机值的array
+a = np.random.sample((4,4)) #产生在0-1之间的随机值的4*4的二维array
+a = np.random.randn(10)# 产生满足正态分布的10个元素的array
+a= np.arange(10) #产生0 - 10范围，差值为1的array
+a = np.arange(3,10) #产生3-10范围，差值为1的array
+a = np.arange(2,20,2) #产生2-20范围，差值为2的array
+```
+
+#### bool数组索引
+
+```python
+a = np.random.sample(10) #产生10个0-1间的array
+#array([ 0.52475091,  0.91664346,  0.5753506 ,  0.14347479,  0.89382935,
+#        0.24460803,  0.49021136,  0.2314232 ,  0.38018785,  0.51355774])
+b = a > 0.5 #得到bool数组
+#array([ True,  True,  True, False,  True, False, False, False, False,  True], dtype=bool)
+print a[b] #打印所有b为True的索引的值
+#[ 0.52475091  0.91664346  0.5753506   0.89382935  0.51355774]
+
+b = (a > 0.5) & (a < 0.8) #逻辑运算混合结果
+print a[b] # 打印满足a > 0.5 且 a < 0.8的值
+
+```
+
+#### 数组索引
+
+```python
+a = np.random.sample((4,4)) #创建4×4的矩阵
+print a[[0,1,3,2]] #按行序 0, 1,3,2打印a
+print a[[0, 2, 1,3], [0,3,2,1]] #打印a[0,0], a[2,3], a[1,2], a[3,1] 组成的array
+print a[[0,2,1,3]][:,[0,3,2,1]] #按 0,2,1,3的行序，0,3,2,1的列序打印a 
+#等同于a[np.ix_([0,2,1,3], [0,3,2,1])]
+```
+
+
+#### 常见的Array操作
+
+```python
+a = np.random.sample((10, 3))
+b = a.T  #矩阵的转置
+c = a.dot(b) #矩阵的点乘
+d = np.cross(np.ones(3), np.zeros(3)) #Array的叉乘
+e = a.reshape((2,3,5)) #Array的重组
+f = e.transpose((1, 0 ,2)) #轴交换, 交换顺序为y - x - z
+
+```
+
+
+#### 内建函数
+
+* 一元函数
+
+```python
+abs, fabs #计算整数、浮点数或复数的绝对值。对于非复数值,可以使用更快的fabs。
+sqrt #计算各元素的平方根。相当于arr ** 0.5。
+sqare #计算各元素的平方。相当于arr ** 2。
+exp #计算各元素的e^x。
+log, log10, log2, log1p #分别为自然对数、底数为10的log、底数为2的log和log(1 + x)。
+sign #计算各元素的正负号:1(正数)、0(零)、-1(负数)。
+ceil  #计算各元素的ceiling值,即大于等于该值的最小整数。
+floor #计算各元素的floor值,即小于等于该值的最小整数。
+rint  #将各元素值四舍五入到最接近的整数,保留dtype。
+modf # 将数组的小数部分与整数部分以两个独立数组的形式返还。
+isnan  #返回一个表示“哪些值是NaN(这不是一个数字)”的布尔型数组。
+isfinite, isinf  #分别返回一个表示“哪些元素是有限的(非inf,非NaN)”或“哪些元素是
+无穷的”的布尔型数组。
+cos, cosh, sin, sinh, tan, tanh #普通型或双曲型三角函数。
+arccos, arccosh, arcsin, arcsinh arctan, arctanh #反三角函数。
+logical_not #计算各元素not x的真值。相当于-arr。
+
+```
+
+* 二元函数
+
+```python
+add #将数组中对应的元素相加
+subtract #从第一个数组中减去第二个数组中的元素
+multiply #数组元素相乘
+divide, floor_divide #除法或向下取整除法
+power #对第一个数组中的元素A和第二个数组中对应位置的元素B,计算A^B。
+maximum, fmax #元素级的最大值计算。fmax将忽略NaN。
+minimum, fmin #元素级的最小值计算。fmin将忽略NaN。
+mod #元素级的求模计算
+copysign #将第二个数组中的符号复制给第一个数组中的值
+greater, greater_equal, less,less_equal,equal, not_equal #执行元素级的比较,最终产生布尔型数组。
+logical_and, logical_or,logical_xor #执行元素级的真值逻辑运算,最终产生布尔型数组。
+```
+
+#### 条件逻辑
+
+*  where 函数
+
+np.where(condition, [x, y]) , [x, y]可选， 如果输入只有condition，则返回满足条件的对应元素的索引。如果指定x, y， 则将满足条件的元素填充为x, 不满足的填充为y，并将数组返回。
+
+类似于
+
+```python
+[xv if c else yv for (c,xv,yv) in zip(condition,x,y)]
+```
+同样的where函数还可以嵌套， 例如
+
+```python
+result = np.where(cond_1 & cond_2, 0, np.where(cond_1, 1, np.where(cond_2, 2, 3)))
+```
+* any函数
+判断是否有存在满足条件的数，如果存在， 返回True, 否则， 返回False
+* all函数
+判断是否所有的数都满足条件，如果是， 返回True, 否则， 返回False
+
+#### 数据处理- 统计
+
+```python
+sum #对数组中全部或某轴向的元素求和。零长度的数组的sum为0。
+mean #算术平均数。零长度的数组的mean为NaN。
+std, var #分别为标准差和方差,自由度可调(默认为n)。
+min, max #最大值和最小值
+argmin #分别为最大值和最小值的索引
+cumsum #所有元素的累计和
+cumprod #所有元素的累计积
+```
+
+示例
+
+```python
+
+#cumsum:
+#-cumsum(0) 按行操作：a[i][j] += a[i - 1][j] - 1]
+#-cumsum(1) 按列操作：a[i][j] += a[i - 1][j]
+#cumprod:
+#- cumprod(0)按行操作：a[i][j] *= a[i-1][j]
+#- cumprod(1)按列操作：a[i][j] *= a[i][j - 1]
+arr = np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
+print arr.cumsum(0)
+print arr.cumprod(1)
+
+```
+
+
+#### 数据去重及集合运算
+
+```python
+unique(x) #计算x中的唯一元素,并返回有序结果。
+intersect1d(x, y) #计算x和y中的公共元素,并返回有序结果。
+union1d(x, y) #计算x和y的并集,并返回有序结果。
+in1d(x, y) #得到一个表述"x的元素是否包含于y"的布尔型数组
+setdiff1d(x, y) #集合的差,即元素在x中且不在y中
+setxor1d(x, y) #集合的异或,即存在于一个数组中但不同时存在于两个数组中的元素。
+```
+
+#### 文件读取与写入
+
+```
+np.loadtxt(filenale, delimiter = ',') # 读取txt文本， 以逗号作为分隔符。
+np.save(filename, var) #将var 变量保存为到文件中，默认为npy文件
+np.load(filename) #读取npy文件， 得到变量
+np.savez(filename, a, b) #多个变量压缩保存在文件中。
+```
+
+#### 线性函数
+常用的numpy.linalg函数， 通过import np.linalg导入
+
+```python
+diag #以一维数组的形式返回方阵的对角线(或非对角线元素),获将一维数组转换为方阵(非对角线元素为0)。
+dot #矩阵乘法
+trace #计算对角线元素的和
+det #计算矩阵行列式
+eig #计算方阵的特征值和特征向量
+inv #计算方阵的逆
+pinv #计算矩阵的Moore-Penrose伪逆
+qr #计算QR分解
+svd #计算奇异值分解
+solve #解线性方程Ax = b,其中A为一个方阵。
+lstsq #计算Ax = b的最小二乘解
+```
+
+
+#### 随机数生成
+
+通过np.random函数产生。
+
+```python
+seed #确定随机数生成器的种子
+permutation #返回一个序列的随机排列或返回一个随机排列的返回
+shuffle #对一个序列就地随机乱序
+rand #产生均匀分布的样本值
+randint #从给定的上下限范围内随机选取整数
+randn #产生正态分布(平均值为0,标准差为1)
+binomial #产生二项分布的样本值
+normal #产生正态(高斯)分布的样本值
+beta #产生Beta分布的样本值
+chisquare #产生卡方分布的样本值
+gamma #产Gamma分布的样本值
+uniform #产生在[0, 1]中均匀分布的样本值
+```
+
+
+#### 数组的合并与拆分
+
+```python
+concatenate #最一般化的连接,沿一条轴连接一组数组
+vstack, row_stack #以面向行的方式对数组进行堆叠(沿轴0)
+hstack, #以面向行的方式对数组进行堆叠(沿轴1)
+column_stack #类似于hstack,但是会先将一维数组转换为二维列向量。
+dstack #以面向“深度”的方式对数组进行堆叠(沿轴2)
+split #沿指定轴在指定的位置拆分数组
+hsplit, vsplit, dsplit split#的便捷化函数,分别沿着轴0、轴1和轴2进行拆分。
+_r对象 #用于按行堆叠np.r_[a, b]
+_c对象 #用于按列堆叠np.c_[a,b]
+title #将数组重复np.tile(a, (2,3)) 其中2, 3指延x, y轴分别重复2,3次
+repeat #将元素重复np.repeat(a, 2, axis=0) 指将a的元素按x轴重复两次。
+```
+
+
+
+ 
+
+
+
