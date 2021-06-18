@@ -6,32 +6,107 @@ tags: [Python]
 comments: true
 ---
 
-在我们的学习过程中，常常在学习开源库中，经常会碰到有的用python2,有的用python3，如果做到版本兼容呢？
+python 常用的第三方库
 <!--more-->
 
-一种方式，可以用anaconda，或者用virtualenv进行虚拟环境的使用，这样可以做到python的不同版本控制，另一种方式，则是安装不同的版本的python，进行用命令进行区别，python2,python3。
+python使用环境安装， 可以通过官网下载安装包，然后安装；也可能通过Anaconda进行安装，它集成了python环境，并且装了一些常见的第三方库，推荐使用Anaconda。
 
-** 安装python2 ** 
-下载python2的安装包安装，并添加python2到系统环境变量。
-具体的方式：通过控制面板-》系统和安全-》系统，选择高级系统设置，环境变量，选择Path，点击编辑，新建，分别添加D:\Python\python27和D:\Python\python27\Scripts到环境变量(假设安装python 2.7)。
+**Anaconda**
 
-** 安装python3 ** 
-同样的，下载python3的安装包安装，并添加python3到系统环境变量。
-具体的方式：通过控制面板-》系统和安全-》系统，选择高级系统设置，环境变量，选择Path，点击编辑，新建，分别添加D:\Python\python37和D:\Python\pytho37\Scripts到环境变量(假设安装python3.7)。
+* 在[官网](https://www.continuum.io/downloads)上下载对应系统版本的Anaconda
 
-** 重命名python2 **
-找到python2的安装目录， 将python.exe修改为python2.exe， 将pythonw.exe修改为pythonw2.exe， 修改后，可以在命令行中输入python2 -V进行查看是否设置成功
+* 创建环境和启动环境
 
-** 重命名python3 ** 
-找到python3的安装目录，将python.exe修改为python3.exe， 将pythonw.exe修改为pythonw3.exe， 修改后，可以在命令行中输入python3 -V进行查看是否设置成功
+```
+conda create --name py27 python=2.7
+activate py27
+```
 
+* 常用命令
 
+```
+conda list  # list all the installed packages
 
-** 安装pip2 **
-在DOS命令框输入命令，python2 -m pip install --upgrade pip --force-reinstall，显示重新安装成功。
+conda install lib_name # install library
 
-** 安装pip3 **
-在DOS命令框输入命令，python3 -m pip install --upgrade pip --force-reinstall，显示重新安装成功。
+```
 
+**Jupyter**
 
-如果需要用pip安装库，则分别用pip2 install XXX和pip3 install XXX即可安装各自的python包。
+Jupyter在conda中已经默认安装了，如果需要本地安装，则通过下面的命令安装
+
+```
+pip install jupyter
+```
+
+**numpy**
+
+提供常用的数值数组、矩阵等函数
+
+```
+pip install numpy 
+#or
+conda install numpy
+```
+
+**scipy**
+
+是一种使用NumPy来做高等数学、信号处理、优化、统计的扩展包 [文档](http://docs.scipy.org/doc/)
+
+```
+pip install scipy  
+#or
+conda install scipy
+```
+
+pandas
+
+是一种构建于Numpy的高级数据结构和精巧工具,快速简单的处理数据。
+
+```
+pip install pandas 
+#or
+conda install pandas
+```
+
+**matplotlib**
+
+python 绘图库，类型于matlab的plot绘图等功能。
+
+```
+pip install matplotlib
+#or
+conda install matplotlib
+```
+
+**ntlk**
+
+自然语言处理工具包(Natural Language Toolkit)
+
+```
+pip install -U nltk
+```
+下载预料库
+
+```
+nltk.download()
+```
+
+**igraph**
+
+图计算和社交网络分析 http://igraph.org/python/
+
+```
+pip install -U python-igraph
+#or
+conda install -c marufr python-igraph=0.7.1.post6
+```
+
+**scikit-learn**
+Scikit-learn是建立在Scipy之上的一个用于机器学习的Python模块。
+
+```
+pip install -U scikit-learn
+# or
+conda install scikit-learn
+```
