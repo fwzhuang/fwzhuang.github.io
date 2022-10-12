@@ -1,5 +1,5 @@
 ---
-title: Thinking Parallel, Part II: Tree Traversal on the GPU
+title: Thinking Parallel, Part II -> Tree Traversal on the GPU
 tags: Collision
 ---
 

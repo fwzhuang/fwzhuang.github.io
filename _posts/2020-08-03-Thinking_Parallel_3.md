@@ -1,5 +1,5 @@
 ---
-title: Thinking Parallel, Part III: Tree Construction on the GPU
+title: Thinking Parallel, Part III-> Tree Construction on the GPU
 tags: Collision
 ---
 

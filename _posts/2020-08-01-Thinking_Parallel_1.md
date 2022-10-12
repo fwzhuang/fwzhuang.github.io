@@ -1,5 +1,5 @@
 ---
-title: Thinking Parallel, Part I: Collision Detection on the GPU
+title: Thinking Parallel, Part I-> Collision Detection on the GPU
 tags: Collision
 ---
 
