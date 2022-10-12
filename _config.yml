@@ -180,6 +180,8 @@ analytics:
 ## => Build
 ##############################
 markdown    : kramdown
+kramdown:
+    math_engine: katex
 highlighter : rouge
 permalink   : date
 
@@ -223,3 +225,4 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
+  - jekyll-katex
