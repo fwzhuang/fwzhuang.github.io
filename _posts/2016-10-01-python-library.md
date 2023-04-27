@@ -1,10 +1,17 @@
 ---
 layout: post
 title: python常用的库
-categories: Python
-tags: [Python]
-comments: true
+categories: [Python]
+description: Python 常用的第三方库
+keywords: python, library
+mermaid: false
+sequence: false
+flow: false
+mathjax: false
+mindmap: false
+mindmap2: false
 ---
+
 
 python 常用的第三方库
 <!--more-->

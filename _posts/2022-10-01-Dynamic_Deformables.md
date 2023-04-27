@@ -1,14 +1,21 @@
 ---
+layout: post
 title: Dynamic Deformables:Implementationand Production Practicalities (Now With Code!)
-tags: Sim
+categories: [Simulation]
+description: 翻译<Dynamic Deformables:Implementationand Production Practicalities>
+keywords: Sim, CG
+mermaid: false
+sequence: false
+flow: false
+mathjax: true
+mindmap: false
+mindmap2: false
 ---
 
 本文整理机器翻译《[Dynamic Deformables:Implementationand Production Practicalities (Now With Code!)](https://www.tkim.graphics/DYNAMIC_DEFORMABLES/DynamicDeformables.pdf)》，用以学习之用。
-
 <!--more-->
-[toc]
 
-#  摘要
+##  摘要
 自从Boo在Monsters,Inc.(2001)中穿上衬衫以来，模拟动态变形一直是Pixar讲故事的一个组成部分。最近，皮克斯的核心模拟器Fizt应用了几项关键转换，以提高其速度、鲁棒性和通用性。从Coco(2017)开始，改进的碰撞检测和响应被整合到布料求解器中，然后在Cars3(2017)中引入
 了3D刚体，在Onward(2020)中，允许服装与角色的身体双向交互耦合。
 
@@ -51,7 +58,7 @@ David Eberle是皮克斯动画工作室的模拟工具研发主管。他曾在Di
 现有几种针对计算机图形学的变形介绍，包括经典的Witkin和Baraff(1997)以及更现代的Sifakis和Barbic(2012)或Bargteil和Shinar(2018)。如果您是已经熟悉这些材料的从业者，您可能可以跳过本章的大部分内容。需要注意的是，我们稍后展示的许多快速、紧凑的结构将取决于Golub和 Van Loan(2013)的高阶张量表示法。这在计算机图形学中并不经常出现，因此您可能仍想阅读第3章。
 
 ## 2.2 我们在谈论什么样的挤压？
-![F2-1](/img/assets/Sim/F2_1.png)
+![F2-1](/images/posts/Sim/F2_1.png)
 
 我们将研究一种特定形式的固体变形，称为超弹性变形。假设我们拿一只兔子并用100磅的重量将它压扁（图2.1）。当我们移除重量时，它会恢复到原来的形状。这就是超弹性的本质：当所有的外力都被移除时，超弹性物体会恢复到原来的形状。兔子被拉长到原来长度的一百万倍，或者被压成薄饼都没有关系。移除力后，它会弹回原来的兔子形状。
 
@@ -67,7 +74,7 @@ David Eberle是皮克斯动画工作室的模拟工具研发主管。他曾在Di
 首先，让我们看一个明显的测量变形的方法，它会被证明是错误的。从那里，我们可以思考哪里出了问题并想出更好的办法。
 ### 2.3.1测量错误的方法
 
-![F2_2](/img/assets/Sim/F2_2.png)
+![F2_2](/images/posts/Sim/F2_2.png)
 
 让我们看一个三角形, 我们将使用上横线将其在**rest shape** _(材料空间)_ 中的顶点表示为$\overline{x}_0$,$\overline{x}_1$, $\overline{x}_2$。在三角形从其原始形状被压
 扁后，我们将其**deformedshape** _（世界空间）_ 表示为$x_0$, $x_1$, $x_2$。计算我们变形程度的分数的一种明显方法是
@@ -77,13 +84,13 @@ $$\begin{align}\Psi_{wrong} = \sum_{i=0}^{2}\parallel\overline{x}_i - x_i \paral
 
 评分函数$\Psi_{wrong}$，看起来当然是合理的。当您向下挤压$x_1$或向上拉伸更多时，分数（能量）肯定会增加。当没有发生变形时，我们绝对希望score函数等于0，而当发生大量变形时，我们希望分数函数变成一个大数。如果这就是所需要的，$\Psi_{wrong}$似乎可以完成工作.
 
-![F2_3](/img/assets/Sim/F2_3.png)
+![F2_3](/images/posts/Sim/F2_3.png)
 
 是吗？问题是我们不会直观地考虑变形的一堆东西也被归为分数。在图2.3中，我们将三角形平移到右上角一小段距离。如果我们在这个新三角形上使用$\Psi_{wrong}$，那么它将显示为非零分数.
 
 然而，根据任何合理的定义，这个三角形并没有变形。相反，它已被移动或平移。图2.4显示了另一个问题案例。如果我们旋转三角形，那么$\Psi_{wrong}$将返回一个非零分数，错误地将这个三角形视为“变形”。但是，根据任何合理的定义，三角形已经旋转。它没有变形。
 
-![F2_4](/img/assets/Sim/F2_4.png)
+![F2_4](/images/posts/Sim/F2_4.png)
 
 我们想要的是一个平移和旋转不变的评分函数$\Psi$。如果一个三角形仅仅被平移或旋转，它的变形分数应该显示为零。
 
@@ -189,7 +196,7 @@ $$
 的方式表征了变形。我们可以把它写成：
 $$ \Psi_{StVK,stretch} = \frac{1}{2} \parallel F^TF -I \parallel ^2_F  \tag{2.11}$$
 这是个好主意！这个想法足够好，人们给它起了一个特殊的名字：St.Venant‑Kirchhoff拉伸能量，简称“StVK，stretch”。$F^TF -I$的各自组成部分很受欢迎，并且他们有特殊的名字跟符号 ：
-![F2_4_1](/img/assets/Sim/F2_4_1.png)
+![F2_4_1](/images/posts/Sim/F2_4_1.png)
 使用这些，能量可以写成高度紧凑的形式:
 $$ \Phi_{StVK,stretch} = \parallel E \parallel ^2_F \tag{2.12}$$
 同样，这是一种度量形变的好方法。我们正在使用$F$, 平移已经减去了，我们使用$F^TF$恒等式分解旋转。我们使用$F$会抱怨一件事，那就是评分函数是非线性的，执行与$\Psi_{C\&SL}$相同的展开，我们可以得到
@@ -315,4 +322,4 @@ $$\partialx$$
 ---
 If you like it, don't forget to give me a star.
 
-[![Star This Project](/img/assets/github.svg)](https://github.com/fwzhuang/fwzhuang.github.io)
+[![Star This Project](/images/posts/github.svg)](https://github.com/fwzhuang/fwzhuang.github.io)

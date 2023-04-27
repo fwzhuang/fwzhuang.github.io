@@ -1,10 +1,17 @@
 ---
 layout: post
 title: Windows下支持多版本python
-categories: Python
-tags: [Python]
-comments: true
+categories: [Python]
+description: Windows下支持多版本python
+keywords: Python
+mermaid: false
+sequence: false
+flow: false
+mathjax: false
+mindmap: false
+mindmap2: false
 ---
+
 在我们的学习过程中，常常在学习开源库中，经常会碰到有的用python2,有的用python3，如果做到版本兼容呢？
 <!--more-->
 

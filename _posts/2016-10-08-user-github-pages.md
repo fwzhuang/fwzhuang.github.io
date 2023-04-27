@@ -45,7 +45,7 @@ git push origin master
 本示例使用Jekyll来装饰Github page。
 
 ### 1. 首先安装Ruby
-到[官网](https://rubyinstaller.org/downloads/)下载安装文件, 本人的安装的版本是（rubyinstaller-devkit-2.5.7-1-x64.exe）， 按要求安装即可。安装完后，通过控制台输入
+到[官网](https://rubyinstaller.org/downloads/)下载安装文件, 本人的安装的版本是（Ruby+Devkit 3.2.2-1 (x64) ）， 按要求安装即可。安装完后，通过控制台输入
 ```
 ruby -v 
 ```
