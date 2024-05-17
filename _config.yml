@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: http://www.youizone.com/
+url: https://fwzhuang.github.io/
 date_format: "ordinal"
 title: YouIZone
 subtitle: "你我的空间"
